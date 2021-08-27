@@ -99,7 +99,7 @@ class SignUp extends StatelessWidget {
                   ),
                   RaisedButton(
                       elevation: 6.0,
-                      color: Colors.green.shade300,
+                      color: Colors.green,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30)),
                       child: Padding(

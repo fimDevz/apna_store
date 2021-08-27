@@ -1,4 +1,5 @@
 import 'package:apna_store/screens/product_info.dart';
+import 'package:apna_store/screens/profile.dart';
 import 'package:apna_store/screens/view_product.dart';
 import 'package:flutter/material.dart';
 
@@ -20,146 +21,165 @@ class _AdminDashboardState extends State<AdminDashboard> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           color: Colors.white,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "APNA STORE",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w800,
+          child: SingleChildScrollView(
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.start,
+              // crossAxisAlignment: ,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("My Profile",style: TextStyle(fontSize: 20,color: Colors.green),),
+                    IconButton(
+                        alignment: Alignment.center,
+                        icon: Icon(Icons.person,), onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MyProfile()),
+                      );
+                    }),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "APNA STORE",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w800,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                  Icon(
-                    Icons.store,
-                    color: Colors.green,
-                    size: 40,
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(8),
-                      height: 250,
-                      child: TextButton(
-                        child: Text(
-                          "Upload Product",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
+                    Icon(
+                      Icons.store,
+                      color: Colors.green,
+                      size: 40,
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.all(8),
+                        height: 250,
+                        child: TextButton(
+                          child: Text(
+                            "Upload Product",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 24,
+                            ),
                           ),
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    side: BorderSide(color: Colors.black))),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProductInfo()),
+                            );
+                          },
                         ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                  side: BorderSide(color: Colors.black))),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ProductInfo()),
-                          );
-                        },
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(8),
-                      height: 250,
-                      child: TextButton(
-                        child: Text(
-                          "View Product",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.black, fontSize: 24),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.all(8),
+                        height: 250,
+                        child: TextButton(
+                          child: Text(
+                            "View Product",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.black, fontSize: 24),
+                          ),
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    side: BorderSide(color: Colors.black))),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ViewProduct()),
+                            );
+                          },
                         ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                  side: BorderSide(color: Colors.black))),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ViewProduct()),
-                          );
-                        },
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(8),
-                      height: 250,
-                      child: TextButton(
-                        child: Text(
-                          "View Orders",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 24, color: Colors.black),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.all(8),
+                        height: 250,
+                        child: TextButton(
+                          child: Text(
+                            "View Orders",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 24, color: Colors.black),
+                          ),
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    side: BorderSide(color: Colors.black))),
+                          ),
+                          onPressed: () {
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) => ViewProduct()),
+                            // );
+                          },
                         ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                  side: BorderSide(color: Colors.black))),
-                        ),
-                        onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => ViewProduct()),
-                          // );
-                        },
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(8),
-                      height: 250,
-                      child: TextButton(
-                        child: Text(
-                          "....",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 24, color: Colors.black),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.all(8),
+                        height: 250,
+                        child: TextButton(
+                          child: Text(
+                            "....",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 24, color: Colors.black),
+                          ),
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    side: BorderSide(color: Colors.black))),
+                          ),
+                          onPressed: () {
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) => ProductInfo()),
+                            // );
+                          },
                         ),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                  side: BorderSide(color: Colors.black))),
-                        ),
-                        onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => ProductInfo()),
-                          // );
-                        },
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
